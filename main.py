@@ -11,18 +11,12 @@ win = pygame.display.set_mode((500, 500))
 # Set up a loop
 run = True
 while run:
-  for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
   
   # Game code starts here ---------------------------------------
-  
-  pygame.time.delay(1000/60) # Loop the code 60 times per second
-  
+    
   # Draw a rectangle
   pygame.draw.rect(win, (255, 0, 0), (50, 50, 50, 50))
   
   #Update the display
   pygame.display.update()
-  
 pygame.quit()
