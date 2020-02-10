@@ -16,4 +16,7 @@ while run:
   # Draw a rectangle
   pygame.draw.rect(win, (255, 0, 0), (50, 50, 50, 50))
   
+  #Update the display
+  pygame.display.update()
+  
 pygame.quit()
