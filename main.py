@@ -1,23 +1,14 @@
-import pygame # import library
-pygame.init()
+import pyglet
+window = pyglet.window.Window()
 
-# Create the window
-win = pygame.display.set_mode((800, 600))
+label = pyglet.text.Label('Hello, world',
+                          font_name='Times New Roman',
+                          font_size=36,
+                          x=window.width//2, y=window.height//2,
+                          anchor_x='center', anchor_y='center')
+@window.event
+def on_draw():
+    window.clear()
+    label.draw()
 
-run = True
-while run:
-  for event in pygame.event.get():
-    if event.type == pygame.QUIT:
-      run = False
-
-# Game code starts here ---------------------
-  win.fill((0, 0, 0))
-
-  # Draw a rectangle
-  pygame.draw.rect(win, (0, 204, 102), (50, 50, 100, 200))
-  
-  #Update the display
-  pygame.display.update()
-
-print("Ending game")
-pygame.quit()
+pyglet.app.run()
